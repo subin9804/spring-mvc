@@ -26,8 +26,15 @@
     //자바스크립트 내추럴 템플릿
     var username2 = /*[[${user.username}]]*/ "test username";
 
-    //객체
+    //객체(json)
     var user = [[${user}]];
+</script>
+
+<!-- 자바스크립트 인라인 each -->
+<script th:inline="javascript">
+    [# th:each="user, stat : ${users}"]
+    var user[[${stat.count}]] = [[${user}]]
+    [/]
 </script>
 
 </body>
